@@ -20,6 +20,107 @@ body {
     background-size: cover;
 
   }
+  .popup {
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .popup .popuptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+  }
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  } 
+
+  .box {
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    text-align: center;
+  }
+  
+  /*.button {
+    font-size: 1em;
+    padding: 10px;
+    color: rgb(83, 83, 83);
+    border: 2px solid #940000;
+
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .button:hover {
+    background: #fff1df;
+  }*/
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
 
   h1 {
     color: #d14a4a;
@@ -99,7 +200,7 @@ body {
  p {
     color: #ffffff;
     text-align: right;
-    padding: 14px 16px;
+    padding: 1em;
     text-decoration: none;
     text-align: justify;
 
@@ -118,31 +219,24 @@ a:hover {
   }
 
 div.transbox {
-  max-width: 800px;
-  top: 10em;
+  max-width: 100%;
   background-color: rgb(256, 256, 256, .9);
   border: 2px solid;
   border-color:  rgb(173, 173, 173) rgb(190, 190, 190) rgb(87, 87, 87) rgb(139, 139, 139);
   padding: 1em;
-  margin: auto;
-  text-align: justify;
-
-
 }
   
 div.transbox p {
-  margin: 1em;
-  padding: 1em;
   color: #333;
-  font-size: 20px;
+  font-size: 1.2em;
   line-height: 1.5;
   font-family:'Open Sans Hebrew','Sans-serif';
 }
 
 
 .content {
-  max-width: 1000px;
-  margin: auto;
+  max-width: 50%;
+  margin: 0 auto;
   font-family:'Open Sans Hebrew','Sans-serif';
 }
 
@@ -150,6 +244,7 @@ div.transbox p {
   transition: 0.2s;
   color: rgb(3, 94, 11);
 }
+
 
 tl-frame, .tl-frame:before {
   display: block;
